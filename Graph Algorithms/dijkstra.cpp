@@ -30,7 +30,7 @@ int main(){
     cin>>source;
     dist[source] = 0;
     set<pair<ll,ll>>s; ///set of pairs (node,distance) sorted by distance acending order
-    s.insert({0,source});//inserting source node
+    s.insert({source,0});//inserting source node
     while(!s.empty()){
         auto it = *(s.begin());///extracting node with minimum distance
         s.erase(it);///erasing that node from set
@@ -38,10 +38,10 @@ int main(){
             if(dist[i.first]>dist[it.first]+i.second){
                 //distance(node(v))>distance(parent(u))+weight(parent->node(u,v))
                 //updating distance of node
-                s.erase({dist[i.first],i.first});
+                s.erase({i.first,dist[i.first]});
                 //inserting new distance
                 dist[i.first] = dist[it.first]+i.second; //d(v)=d(u)+w(u,v)
-                s.insert({dist[i.first],i.first});
+                s.insert({i.first,dist[i.first]});
             }
         }
     }
