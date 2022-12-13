@@ -1,4 +1,9 @@
-0 5 8 9 
-INF 0 3 4 
-INF INF 0 1 
-INF INF INF 0 
+0 1
+1 2
+2 3
+3 4
+2 5
+5 6
+6 7
+2 8
+Total cost of mst (O(nlogn)): 37
