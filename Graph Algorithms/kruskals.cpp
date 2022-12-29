@@ -14,6 +14,7 @@ ll make_set(ll x){
 }
 ll find(ll x){
     if(parent[x]==x) return x;
+    ///return find(parent[x]);//without path compression
     return parent[x]=find(parent[x]);//path compression
 }
 void Union(ll x, ll y){
